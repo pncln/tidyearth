@@ -1,5 +1,6 @@
 const express = require('express')
-const userRouter = require('./routers/userRouter')
+require('./db/mongoose')
+const userRouter = require('./routers/user')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -10,3 +11,5 @@ app.use(userRouter)
 app.listen(port, () => {
     console.log('Listening on port ' + port)
 })
+
+const User = require('./models/User')
