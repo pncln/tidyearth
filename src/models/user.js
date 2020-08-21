@@ -31,12 +31,12 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
-    age: {
-        type: Number,
-        default: 0,
+    birthDate: {
+        type: Date,
+        default: null,
         validate(value) {
-            if (value < 0) {
-                throw new Error('Age cannot be less than 0')
+            if (!value) {
+                throw new Error('You should pick a birth day')
             }
         }
     },
